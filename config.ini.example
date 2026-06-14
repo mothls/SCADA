@@ -1,0 +1,11 @@
+[Modbus]
+port = COM3
+baudrate = 9600
+timeout = 1
+
+[MQTT]
+broker = localhost
+port = 1883
+
+[Database]
+path = D:/NOVTOK/SQLite/NOVATOK_DATABASE.db3

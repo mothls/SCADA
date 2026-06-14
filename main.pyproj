@@ -1,0 +1,108 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>99140ff4-95af-4b99-88db-9edd6d793c40</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>src\main.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>main</Name>
+    <RootNamespace>NOVTOK_SCADA</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include=".gitignore">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config.ini.example">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\core\api_wrapper.py" />
+    <Compile Include="src\core\command_arbitrator.py" />
+    <Compile Include="src\core\control_loop.py" />
+    <Compile Include="src\core\mqtt_client.py" />
+    <Compile Include="src\core\database.py" />
+    <Compile Include="src\core\modbus_client.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\core\safety_shield.py" />
+    <Compile Include="src\core\sandbox_runner.py" />
+    <Compile Include="src\core\script_manager.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\core\simulation.py" />
+    <Compile Include="src\core\state_manager.py" />
+    <Compile Include="src\gui\algorithm_manager.py" />
+    <Compile Include="src\gui\charts_area.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gui\main_window.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gui\mnemonic_widget.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gui\chart_widget.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\gui\__init__.py" />
+    <Compile Include="src\core\__init__.py" />
+    <Compile Include="src\main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\utils\config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\utils\__init__.py" />
+    <Compile Include="students_scripts\battery.py" />
+    <Compile Include="students_scripts\test %282%29.py" />
+    <Compile Include="students_scripts\test %283%29.py" />
+    <Compile Include="students_scripts\test.py" />
+    <Compile Include="students_scripts\testik.py" />
+    <Compile Include="students_scripts\testloop.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\core\" />
+    <Folder Include="src\resources\" />
+    <Folder Include="students_scripts\" />
+    <Folder Include="students_scripts\__pycache__\" />
+    <Folder Include="wheelhouse\" />
+    <Folder Include="tests\" />
+    <Folder Include="src\utils\" />
+    <Folder Include="src\gui\" />
+    <Folder Include="src\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NOVTOK.bat" />
+    <Content Include="requirements.txt" />
+    <Content Include="config.ini" />
+    <Content Include="Readme.txt" />
+    <Content Include="src\resources\mnemonic_shem.jpg" />
+    <Content Include="students_scripts\__pycache__\battery.cpython-38.pyc" />
+    <Content Include="students_scripts\__pycache__\test %282%29.cpython-38.pyc" />
+    <Content Include="students_scripts\__pycache__\test %283%29.cpython-38.pyc" />
+    <Content Include="students_scripts\__pycache__\test.cpython-38.pyc" />
+    <Content Include="students_scripts\__pycache__\testik.cpython-38.pyc" />
+    <Content Include="students_scripts\__pycache__\testloop.cpython-38.pyc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
