@@ -40,7 +40,6 @@ NOVTOK_SCADA/
 ОПИСАНИЕ ФАЙЛОВ
 
 Корень проекта
-- .gitignore – исключает из Git: виртуальное окружение, кэш, файлы БД, конфиги с паролями.
 - config.ini.example – пример конфигурации. Скопируйте в config.ini и отредактируйте под своё оборудование.
 - requirements.txt – зависимости, устанавливаемые через pip install -r requirements.txt.
 - README.md – документация.
@@ -193,38 +192,8 @@ config.py
 resources/
 mnemonic_shem.jpg – изображение мнемосхемы.
 
-КОНФИГУРАЦИЯ (config.ini)
 
-[Modbus]
-solar_port = COM3
-wind_port = COM4
-baudrate = 9600
-timeout = 0.5
 
-[MQTT]
-broker = 127.0.0.1
-topic_prefix = lab/plug
-
-[Database]
-path = scada_data.db
-
-[Safety]
-temp_normal = 55
-temp_warning = 65
-temp_critical = 70
-wind_rpm_warning = 1200
-wind_rpm_emergency = 1500
-max_converter_temp = 80
-
-[Battery]
-nominal_capacity_ah = 60
-charge_efficiency = 0.95
-soc_high = 90
-soc_low = 10
-voltage_max = 14.5
-voltage_charge_stop = 14.3
-voltage_min = 10.5
-charge_current = 5.0
 
 УСТАНОВКА И ЗАПУСК
 
@@ -232,7 +201,7 @@ charge_current = 5.0
 2. Клонируйте репозиторий (или скопируйте файлы).
 3. Создайте виртуальное окружение и активируйте его:
    python -m venv venv
-   venv\Scripts\activate
+   venv\Scripts\activate или запустите .bat файл в корне проекта (SCADA должна быть поставлена в путь D:\NOVTOK_SCADA)
 4. Установите зависимости:
    pip install -r requirements.txt
 5. Скопируйте config.ini.example в config.ini и отредактируйте под своё оборудование.
@@ -257,6 +226,7 @@ def loop(api):
         api.actuators.turn_load_off()
     elif soc > 80:
         api.actuators.turn_load_on()
+Также примеры загружены в папку students_scripts 
 
 Скрипт загружается через меню "Алгоритмы -> Загрузить скрипт".
 Защитный алгоритм имеет приоритет над скриптом и не позволяет нарушить безопасные режимы работы.
