@@ -1,11 +1,19 @@
-[Modbus]
-port = COM3
-baudrate = 9600
-timeout = 1
-
-[MQTT]
-broker = localhost
-port = 1883
-
 [Database]
 path = D:/NOVTOK/SQLite/NOVATOK_DATABASE.db3
+
+[Safety]
+temp_normal = 55
+temp_warning = 65
+temp_critical = 70
+wind_rpm_warning = 1200
+wind_rpm_emergency = 1500
+
+[Battery]
+nominal_capacity_ah = 60
+charge_efficiency = 0.95
+soc_high = 90
+soc_low = 10
+voltage_max = 14.5
+voltage_charge_stop = 14.3
+voltage_min = 10.5
+charge_current = 5.0
