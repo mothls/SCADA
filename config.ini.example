@@ -1,3 +1,14 @@
+[Modbus]
+solar_port = COM3
+wind_port = COM4
+baudrate = 9600
+timeout = 5
+unit = 1
+
+[MQTT]
+broker = 192.168.1.1
+port = 1883
+
 [Database]
 path = D:/NOVTOK/SQLite/NOVATOK_DATABASE.db3
 
